@@ -1,0 +1,72 @@
+
+CREATE TABLE `Cidades` (
+	`Cidades_Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`Cidades_Nome`	NVARCHAR ( 50 ) NOT NULL UNIQUE,
+	`Cidades_Codigo`	NVARCHAR ( 10 ) NOT NULL UNIQUE,
+	`Cidades_DtCadastro`	DATE NOT NULL,
+	`Cidades_DtAtualizacao`	DATE NOT NULL
+);
+
+CREATE TABLE `TipoClientes` (
+	`TipoClientes_Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`TipoClientes_Nome`	NVARCHAR ( 50 ) NOT NULL UNIQUE,
+	`TipoClientes_DtCadastro`	DATE NOT NULL,
+	`TipoClientes_DtAtualizacao`	DATE NOT NULL
+);
+
+
+CREATE TABLE `RegimeClientes` (
+	`RegimeClientes_Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`RegimeClientes_Nome`	NVARCHAR ( 50 ) NOT NULL UNIQUE,
+	`RegimeClientes_Codigo`	NUMERIC ( 10 ) NOT NULL UNIQUE,
+	`RegimeClientes_RegTributario`	NAVARCHAR ( 1 ) NOT NULL,
+	`RegimeClientes_Deducoes`	decimal NOT NULL,
+	`RegimeClientes_DtCadastro`  DATE NOT NULL,
+	`RegimeClientes_DtAtualizacao`	DATE NOT NULL
+);
+
+CREATE TABLE `Usuarios` (
+	`Usuarios_Id` INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`Usuarios_Usuario` NVARCHAR(20)  UNIQUE NOT NULL,
+	`Usuarios_Email` NVARCHAR(40)  UNIQUE NOT NULL,
+	`Usuarios_Senha` NVARCHAR(32)  UNIQUE NOT NULL,
+	`Usuarios_Administrador` BOOLEAN NOT NULL,
+	`Usuarios_DtInclusao` DATE NOT NULL,
+	`Usuarios_DtAtualizacao` DATE NOT NULL
+);
+
+CREATE TABLE `Clientes_Tomador` (
+	`Clientes_Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`Clientes_Nome`	NVARCHAR ( 150 ) NOT NULL UNIQUE,
+	`Clientes_TipoPessoa`	NVARCHAR (8) NOT NULL,
+	`Clientes_CNPJorCPF`	NUMERIC (14) NOT NULL UNIQUE,
+	`Clientes_Inscricao`	NUMERIC (14) NOT NULL UNIQUE,
+	`Clientes_TipoLogradouro` NVARCHAR ( 10 ) NOT NULL ,
+	`Clientes_NumLogradouro`	NVARCHAR ( 10 ) NOT NULL ,
+	`Clientes_Complemento`	NVARCHAR ( 20 ) NOT NULL ,
+	`Clientes_Bairro`	NVARCHAR ( 30 ) NOT NULL ,
+	`Clientes_Email`	NVARCHAR ( 50 ) NOT NULL ,
+	`Clientes_Valor`	NUMERIC DECIMAL NOT NULL,
+	`Clientes_DtCadastro`	DATE NOT NULL,
+	`Clientes_DtAtualizacao`	DATE NOT NULL,
+	`Clientes_NomeServico`	NVARCHAR ( 50 ) NOT NULL,
+	`Cidades_Id` INTEGER NOT NULL REFERENCES Cidades,
+	`TipoClientes_Id` INTEGER NOT NULL REFERENCES TipoClientes,
+	`RegimeClientes_Id` INTEGER NOT NULL REFERENCES RegimeClientes
+);
+
+CREATE TABLE `NotasFiscais` (
+	`NotasFiscais_Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`NotasFiscais_Numero` NVARCHAR (20) NOT NULL UNIQUE,
+	`NotasFiscais_Status` NVARCHAR (1) NOT NULL,
+	`NotasFiscais_DataEmissao`	DATE NOT NULL,
+	`NotasFiscais_Assinatura`	NUMERIC (87) NOT NULL,
+	`NotasFiscais_Motivo`	NUMERIC (50) NOT NULL,
+	`NotasFiscais_Protocolo`	NUMERIC (30) NOT NULL,
+	`NotasFiscais_Verificacao`	NUMERIC (20) NOT NULL,
+	`NotasFiscais_RPS` NAVARCHAR (10) NOT NULL,
+	`NotasFiscais_LOTE` NAVARCHAR (10) NOT NULL,
+	`NotasFiscais_DtCadastro`	DATE NOT NULL,
+	`NotasFiscais_DtAtualizacao`	DATE NOT NULL,
+	`Clientes_Id` INTEGER NOT NULL REFERENCES Clientes_Tomador
+);
