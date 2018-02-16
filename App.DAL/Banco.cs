@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Data;
+using System.IO;
 
 namespace App.DAL
 {
     public class Banco
     {
 
-        SQLiteConnection oConnection = new SQLiteConnection(@"Data Source=" + Environment.CurrentDirectory.Replace(@"\", @"\\") + @"\\DBs\\AppDb.s3db" + @"; Version=3");
-
+        //SQLiteConnection oConnection = new SQLiteConnection(@"Data Source=" + Environment.CurrentDirectory.Replace(@"\", @"\\") + @"\\DBs\\AppDb.s3db" + @"; Version=3");
+        SQLiteConnection oConnection = new SQLiteConnection(@"Data Source=" + Directory.GetCurrentDirectory().Replace(@"\bin\Debug", "").Replace(@"\", @"\\") + @"\\Resources"+ @"\\AppDb.s3db" + @"; Version=3");
 
         public void ComandoSQL(string SQL)
         {

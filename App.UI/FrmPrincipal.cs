@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace App.UI
 {
@@ -91,6 +94,22 @@ namespace App.UI
             FrmTipoLogradouros oFrmTipoLogradouros = new FrmTipoLogradouros();
 
             oFrmTipoLogradouros.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string teste = Application.StartupPath;
+                //Properties.Resources.ResourceManager.BaseName()
+            MessageBox.Show(teste);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //string teste = System.AppDomain.CurrentDomain.BaseDirectory.ToString().Replace("\\bin\\Debug", "") + "Resources";
+            string teste = Directory.GetCurrentDirectory();
+            //Properties.Resources.ResourceManager.BaseName()
+            MessageBox.Show(teste);
         }
     }
 }

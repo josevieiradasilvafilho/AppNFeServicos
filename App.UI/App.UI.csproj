@@ -219,6 +219,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AppDb.s3db" />
     <None Include="Resources\Insert.ico" />
   </ItemGroup>
   <ItemGroup>
