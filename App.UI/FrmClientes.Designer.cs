@@ -91,6 +91,9 @@
             this.ts_Remover = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ts_Sair = new System.Windows.Forms.ToolStripButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtTipoLogradouroAbreviatura = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtG)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -598,6 +601,7 @@
             this.txtClientes_ID.Size = new System.Drawing.Size(53, 22);
             this.txtClientes_ID.TabIndex = 68;
             this.txtClientes_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtClientes_ID.Visible = false;
             // 
             // txtClientes_Valor
             // 
@@ -705,11 +709,44 @@
             this.ts_Sair.Text = "&Sair";
             this.ts_Sair.Click += new System.EventHandler(this.ts_Sair_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(850, 72);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 24);
+            this.button2.TabIndex = 74;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtTipoLogradouroAbreviatura
+            // 
+            this.txtTipoLogradouroAbreviatura.Enabled = false;
+            this.txtTipoLogradouroAbreviatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoLogradouroAbreviatura.Location = new System.Drawing.Point(791, 74);
+            this.txtTipoLogradouroAbreviatura.Name = "txtTipoLogradouroAbreviatura";
+            this.txtTipoLogradouroAbreviatura.Size = new System.Drawing.Size(53, 22);
+            this.txtTipoLogradouroAbreviatura.TabIndex = 76;
+            this.txtTipoLogradouroAbreviatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(636, 77);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(154, 16);
+            this.label21.TabIndex = 75;
+            this.label21.Text = "Tipo de Logradouro.:";
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 492);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtTipoLogradouroAbreviatura);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txtClientes_Cep);
             this.Controls.Add(this.Cep);
@@ -836,5 +873,8 @@
         private System.Windows.Forms.ToolStripButton ts_Remover;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton ts_Sair;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtTipoLogradouroAbreviatura;
+        private System.Windows.Forms.Label label21;
     }
 }

@@ -139,6 +139,12 @@
     <Compile Include="FrmTipoClientes.Designer.cs">
       <DependentUpon>FrmTipoClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTipoLogradouros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoLogradouros.Designer.cs">
+      <DependentUpon>FrmTipoLogradouros.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmBoletos.resx">
       <DependentUpon>FrmBoletos.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoClientes.resx">
       <DependentUpon>FrmTipoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoLogradouros.resx">
+      <DependentUpon>FrmTipoLogradouros.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

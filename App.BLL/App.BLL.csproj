@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegimeClientes.cs" />
     <Compile Include="TipoClientes.cs" />
+    <Compile Include="TiposLogradouros.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>

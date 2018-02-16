@@ -572,5 +572,15 @@ namespace App.UI
         {
             UpdtateDatagredViewSearch(txtClientes_Nome.Text, "NOME");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmTipoLogradouros oFrmTipoLogradouros = new FrmTipoLogradouros();
+
+            oFrmTipoLogradouros.ShowDialog();
+
+            txtTipoLogradouroAbreviatura.Text = oFrmTipoLogradouros.ExportarvalortxtAbreviatura;
+            
+        }
     }
 }

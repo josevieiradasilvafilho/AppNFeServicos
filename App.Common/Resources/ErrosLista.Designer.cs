@@ -340,6 +340,33 @@ namespace App.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Campo Abreviatura, Inválido!.
+        /// </summary>
+        public static string TipoLogradouros_ABREVIATURA {
+            get {
+                return ResourceManager.GetString("TipoLogradouros_ABREVIATURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Campo Codigo, Inválido!.
+        /// </summary>
+        public static string TipoLogradouros_CODIGO {
+            get {
+                return ResourceManager.GetString("TipoLogradouros_CODIGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Campo Logradouro, Inválido!.
+        /// </summary>
+        public static string TipoLogradouros_LOGRADOURO {
+            get {
+                return ResourceManager.GetString("TipoLogradouros_LOGRADOURO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Campo Confirmar Senha, Inválido!.
         /// </summary>
         public static string Usuarios_ConfirmarSenha {
