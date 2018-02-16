@@ -20,7 +20,7 @@ namespace App.UI
             //Atualizar DatagridView
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmClientes());
+            Application.Run(new FrmPrincipal());
 
             
         }
