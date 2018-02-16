@@ -75,7 +75,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(684, 25);
-            this.toolStrip1.TabIndex = 28;
+            this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // tsInserir
@@ -135,8 +135,9 @@
             this.txtCodigo.Location = new System.Drawing.Point(626, 44);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(46, 22);
-            this.txtCodigo.TabIndex = 26;
+            this.txtCodigo.TabIndex = 2;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PulaProxCampoTabIndex);
             // 
             // lblCidadeName
             // 
@@ -154,8 +155,9 @@
             this.txtAbreviature.Location = new System.Drawing.Point(449, 44);
             this.txtAbreviature.Name = "txtAbreviature";
             this.txtAbreviature.Size = new System.Drawing.Size(99, 22);
-            this.txtAbreviature.TabIndex = 29;
+            this.txtAbreviature.TabIndex = 1;
             this.txtAbreviature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAbreviature.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PulaProxCampoTabIndex);
             // 
             // lblAbreviatura
             // 
@@ -173,8 +175,9 @@
             this.txtLogradouro.Location = new System.Drawing.Point(95, 44);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(209, 22);
-            this.txtLogradouro.TabIndex = 31;
+            this.txtLogradouro.TabIndex = 0;
             this.txtLogradouro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtLogradouro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PulaProxCampoTabIndex);
             // 
             // label1
             // 
@@ -212,7 +215,7 @@
             this.btPesqLogradouro.Location = new System.Drawing.Point(310, 43);
             this.btPesqLogradouro.Name = "btPesqLogradouro";
             this.btPesqLogradouro.Size = new System.Drawing.Size(27, 24);
-            this.btPesqLogradouro.TabIndex = 63;
+            this.btPesqLogradouro.TabIndex = 4;
             this.btPesqLogradouro.Text = "...";
             this.btPesqLogradouro.UseVisualStyleBackColor = true;
             this.btPesqLogradouro.Click += new System.EventHandler(this.btPesqLogradouro_Click);

@@ -122,6 +122,7 @@
             this.tipoDeLogradouroToolStripMenuItem.Name = "tipoDeLogradouroToolStripMenuItem";
             this.tipoDeLogradouroToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.tipoDeLogradouroToolStripMenuItem.Text = "Tipo de Logradouro";
+            this.tipoDeLogradouroToolStripMenuItem.Click += new System.EventHandler(this.tipoDeLogradouroToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 

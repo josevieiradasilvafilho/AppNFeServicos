@@ -60,8 +60,8 @@ namespace App.UI
 
             dtG.AutoResizeColumns();
             dtG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtG.Columns[2].SortMode = DataGridViewColumnSortMode.Automatic;
-            dtG.Sort(dtG.Columns[2], ListSortDirection.Descending);
+            dtG.Columns[5].SortMode = DataGridViewColumnSortMode.Automatic;
+            dtG.Sort(dtG.Columns[5], ListSortDirection.Descending);
 
         }
 
@@ -81,8 +81,8 @@ namespace App.UI
                                                + @"WHERE (TipoLogradouros_LOGRADOURO LIKE '%" + pesQ + @"%'))");
             dtG.AutoResizeColumns();
             dtG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtG.Columns[3].SortMode = DataGridViewColumnSortMode.Automatic;
-            dtG.Sort(dtG.Columns[4], ListSortDirection.Descending);
+            dtG.Columns[5].SortMode = DataGridViewColumnSortMode.Automatic;
+            dtG.Sort(dtG.Columns[5], ListSortDirection.Descending);
 
         }
 
@@ -243,6 +243,14 @@ namespace App.UI
         private void ts_Remover_Click(object sender, EventArgs e)
         {
             AtualizarDados(@"Remover");
+        }
+
+        public void PulaProxCampoTabIndex(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

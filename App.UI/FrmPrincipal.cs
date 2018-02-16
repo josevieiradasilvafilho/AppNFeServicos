@@ -85,5 +85,12 @@ namespace App.UI
                 Application.Exit();
             }
         }
+
+        private void tipoDeLogradouroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoLogradouros oFrmTipoLogradouros = new FrmTipoLogradouros();
+
+            oFrmTipoLogradouros.ShowDialog();
+        }
     }
 }
