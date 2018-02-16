@@ -99,6 +99,7 @@
             this.tsSalvar.Name = "tsSalvar";
             this.tsSalvar.Size = new System.Drawing.Size(73, 22);
             this.tsSalvar.Text = "&Atualizar";
+            this.tsSalvar.Click += new System.EventHandler(this.tsSalvar_Click);
             // 
             // toolStripSeparator2
             // 
@@ -112,6 +113,7 @@
             this.ts_Remover.Name = "ts_Remover";
             this.ts_Remover.Size = new System.Drawing.Size(74, 22);
             this.ts_Remover.Text = "&Remover";
+            this.ts_Remover.Click += new System.EventHandler(this.ts_Remover_Click);
             // 
             // toolStripSeparator3
             // 

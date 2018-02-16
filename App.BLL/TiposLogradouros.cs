@@ -49,22 +49,22 @@ namespace App.BLL
         {
             switch (this.Scopo)
             {
-                case @"Delete":
+                case @"Remover":
 
                     Validacoes.CheckArgumentNotEmpty(this.TipoLogradouros_LOGRADOURO, ErrosLista.TipoLogradouros_LOGRADOURO);
                     Validacoes.CheckArgumentNotNull(this.TipoLogradouros_LOGRADOURO, ErrosLista.TipoLogradouros_LOGRADOURO);
-                    Validacoes.CheckArgumentLength(this.TipoLogradouros_LOGRADOURO, 5, 50, ErrosLista.TipoLogradouros_LOGRADOURO);
+                    Validacoes.CheckArgumentLength(this.TipoLogradouros_LOGRADOURO, 1, 50, ErrosLista.TipoLogradouros_LOGRADOURO);
                     break;
 
                 default:
 
                     Validacoes.CheckArgumentNotEmpty(this.TipoLogradouros_LOGRADOURO, ErrosLista.TipoLogradouros_LOGRADOURO);
                     Validacoes.CheckArgumentNotNull(this.TipoLogradouros_LOGRADOURO, ErrosLista.TipoLogradouros_LOGRADOURO);
-                    Validacoes.CheckArgumentLength(this.TipoLogradouros_LOGRADOURO, 5, 50, ErrosLista.TipoLogradouros_LOGRADOURO);
+                    Validacoes.CheckArgumentLength(this.TipoLogradouros_LOGRADOURO, 1, 50, ErrosLista.TipoLogradouros_LOGRADOURO);
 
                     Validacoes.CheckArgumentNotEmpty(this.TipoLogradouros_ABREVIATURA, ErrosLista.TipoLogradouros_ABREVIATURA);
                     Validacoes.CheckArgumentNotNull(this.TipoLogradouros_ABREVIATURA, ErrosLista.TipoLogradouros_ABREVIATURA);
-                    Validacoes.CheckArgumentLength(this.TipoLogradouros_ABREVIATURA, 5, 50, ErrosLista.TipoLogradouros_ABREVIATURA);
+                    Validacoes.CheckArgumentLength(this.TipoLogradouros_ABREVIATURA, 1, 10, ErrosLista.TipoLogradouros_ABREVIATURA);
 
                     Validacoes.CheckArgumentNotNull(this.TipoLogradouros_CODIGO, ErrosLista.TipoLogradouros_CODIGO);
 
@@ -78,7 +78,7 @@ namespace App.BLL
         {
             Banco oBanco = new Banco();
             oBanco.ComandoSQL(
-                                @"INSERT INTO TipoClientes ("
+                                @"INSERT INTO TipoLogradouros ("
                                                             + @"[TipoLogradouros_CODIGO],[TipoLogradouros_ABREVIATURA],[TipoLogradouros_LOGRADOURO],[TipoClientes_DtCadastro],[TipoClientes_DtAtualizacao]"
                                                             + @") VALUES("
                                                             + @"'" + this.TipoLogradouros_CODIGO + @"',"
@@ -94,7 +94,7 @@ namespace App.BLL
 
             Banco oBanco = new Banco();
             oBanco.ComandoSQL(
-                                @"UPDATE TipoLogradouro SET "
+                                @"UPDATE TipoLogradouros SET "
                                                             + @"TipoLogradouros_CODIGO ='" + this.TipoLogradouros_CODIGO + @"',"
                                                             + @"TipoLogradouros_ABREVIATURA ='" + this.TipoLogradouros_ABREVIATURA + @"',"
                                                             + @"TipoLogradouros_LOGRADOURO ='" + this.TipoLogradouros_LOGRADOURO + @"',"
@@ -104,11 +104,11 @@ namespace App.BLL
         }
 
         //REMOVER DADOS DA TABELA CIDADES
-        public void Excluir()
+        public void Remover()
         {
             Banco oBanco = new Banco();
             oBanco.ComandoSQL(
-                                @"DELETE FROM TipoLogradouro "
+                                @"DELETE FROM TipoLogradouros "
                                 + @"WHERE (TipoLogradouros_Id = '" + this.TipoLogradouros_ID + @"')");
 
         }

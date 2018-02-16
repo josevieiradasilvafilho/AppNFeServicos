@@ -130,17 +130,27 @@ namespace App.UI
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Question);
             }
-
             catch (Exception ex)
+
             {
-                var msgErros = MessageBox.Show(ex.Message, @"NFs!",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Question);
-            }
-            finally
-            {
-                //Exclui o obj email da memória
-                //oMailMessage.Dispose();
+
+                string sErr = Convert.ToString(ex);
+                
+                if (sErr.Contains(@"UNIQUE constraint failed"))
+                {
+                    MessageBox.Show(@"Registro Existente! ", @"NotasFiscais-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (sErr.Contains(@"Input string was not in a correct format."))
+                {
+                    MessageBox.Show(@"Dados Em Branco! ", @"NotasFiscais-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message, @"NotasFiscais-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                txtClientes_CNPJorCPF.Focus();
+
             }
             
         }

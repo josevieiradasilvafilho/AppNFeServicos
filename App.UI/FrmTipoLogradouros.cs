@@ -86,6 +86,112 @@ namespace App.UI
 
         }
 
+        public void AtualizarDados(string Opcao)
+        {
+            try
+            {
+
+                DateTime oThisDay = DateTime.Now;
+
+                if (String.IsNullOrEmpty(txtID.Text)) txtID.Text = @"1";
+                //Instanciar dados de inclusão para validação
+                var oTiposLogradouros = new TiposLogradouros(
+                                        Convert.ToInt32(txtID.Text)
+                                        , Convert.ToInt32(txtCodigo.Text)
+                                        , Convert.ToString(txtAbreviature.Text).Trim()
+                                        , Convert.ToString(txtLogradouro.Text).Trim()
+                                        , oThisDay
+                                        , oThisDay
+                                        , @"Inserir"
+                                        );
+
+                //VALIDAR DADOS DO USUARIO
+                oTiposLogradouros.SetDados();
+
+                switch (Opcao)
+                {
+                    case @"Inserir":
+                        //INSERIR USUÁRIOS
+                        if (MessageBox.Show("Confirma a Inclusão?", @"Usuarios-Erros(Inserir)!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                        {
+                            oTiposLogradouros.Inserir();
+                            //LIMPAR CAMPOS
+                            txtID.Clear();
+                            txtCodigo.Clear();
+                            txtAbreviature.Clear();
+                            txtLogradouro.Clear();
+
+                        }
+
+                        break;
+
+                    case @"Atualizar":
+                        //INSERIR USUÁRIOS
+                        if (MessageBox.Show("Confirma a Atualização?", @"Usuarios-Erros(Atualizar)!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                        {
+                            oTiposLogradouros.Atualizar();
+                            //LIMPAR CAMPOS
+                            txtID.Clear();
+                            txtCodigo.Clear();
+                            txtAbreviature.Clear();
+                            txtLogradouro.Clear();
+                        }
+
+                        break;
+
+                    case @"Remover":
+                        //INSERIR USUÁRIOS
+                        if (MessageBox.Show("Confirma a Exclusão?", @"Usuarios-Erros(Excluir)!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                        {
+                            oTiposLogradouros.Remover();
+                            //LIMPAR CAMPOS
+                            txtID.Clear();
+                            txtCodigo.Clear();
+                            txtAbreviature.Clear();
+                            txtLogradouro.Clear();
+                        }
+
+                        break;
+
+                    case @"Pesquisar":
+
+                        break;
+
+                    default:
+                        break;
+                }
+
+                //ATUALIZAR DATAGRID VIEW DE CIDADES
+                UpdtateDatagredView();
+
+
+                //FOCO
+                txtLogradouro.Focus();
+
+            }
+            catch (Exception ex)
+
+            {
+
+                string sErr = Convert.ToString(ex);
+
+                if (sErr.Contains(@"UNIQUE constraint failed"))
+                {
+                    MessageBox.Show(@"Registro Existente! ", @"Logradouro-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (sErr.Contains(@"Input string was not in a correct format."))
+                {
+                    MessageBox.Show(@"Dados Em Branco! ", @"Logradouro-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message, @"Logradouro-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                txtLogradouro.Focus();
+
+            }
+        }
 
         private void TipoLogradouros_Load(object sender, EventArgs e)
         {
@@ -113,7 +219,7 @@ namespace App.UI
 
         private void tsInserir_Click(object sender, EventArgs e)
         {
-
+            AtualizarDados(@"Inserir");
         }
 
         private void dtG_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -127,6 +233,16 @@ namespace App.UI
         private void ts_Sair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsSalvar_Click(object sender, EventArgs e)
+        {
+            AtualizarDados(@"Atualizar");
+        }
+
+        private void ts_Remover_Click(object sender, EventArgs e)
+        {
+            AtualizarDados(@"Remover");
         }
     }
 }

@@ -221,32 +221,29 @@ namespace App.UI
 
                 //FOCO
                 txtTipo.Focus();
-            
+
             }
             catch (Exception ex)
+
             {
+
                 string sErr = Convert.ToString(ex);
 
-                switch (sErr.Contains("UNIQUE constraint failed"))
+                if (sErr.Contains(@"UNIQUE constraint failed"))
                 {
-                    case true:
-
-                        MessageBox.Show(@"Registro Existente! ", @"TipoClientes-Erros(Inserção)!",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Question);
-
-                        break;
-
-                    default:
-
-                        MessageBox.Show(ex.Message, @"TipoClientes-Erros(Inserção)!",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Question);
-
-                        break;
+                    MessageBox.Show(@"Registro Existente! ", @"NotasFiscais-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (sErr.Contains(@"Input string was not in a correct format."))
+                {
+                    MessageBox.Show(@"Dados Em Branco! ", @"NotasFiscais-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message, @"NotasFiscais-Erros(Inserção)!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 txtTipo.Focus();
+
             }
         }
 
