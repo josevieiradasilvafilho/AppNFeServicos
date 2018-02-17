@@ -204,6 +204,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\SQLiteInterop.zip" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
