@@ -85,11 +85,13 @@ namespace App.BLL
         public void Inserir()
         {
             Banco oBanco = new Banco();
+            Uteis oUteis = new Uteis();
+            
             oBanco.ComandoSQL(
                                 @"INSERT INTO CIDADES ([Cidades_Nome],[Cidades_Codigo],[Cidades_UF],[Cidades_DtCadastro],[Cidades_DtAtualizacao]) VALUES("
-                                + @"'" + this.Cidades_Nome + @"',"
+                                + @"'" + oUteis.GetRegexRemAssentuacao(this.Cidades_Nome) + @"',"
                                 + @"'" + this.Cidades_Codigo + @"',"
-                                + @"'" + this.Cidades_UF + @"',"
+                                + @"'" + oUteis.GetRegexRemAssentuacao(this.Cidades_UF) + @"',"
                                 + @"'" + this.DtCadastro + @"',"
                                 + @"'" + this.DtAtualizacao + @"')");
         }

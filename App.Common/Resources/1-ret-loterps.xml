@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RetornoEnvioLoteRPS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.prefeitura.sp.gov.br/nfe">
+<Cabecalho Versao="1" xmlns="">
+<Sucesso>false</Sucesso>
+    <InformacoesLote>
+        <NumeroLote>0</NumeroLote>
+        <InscricaoPrestador>31000000</InscricaoPrestador>
+        <CPFCNPJRemetente>
+            <CNPJ>23153425000136</CNPJ>
+        </CPFCNPJRemetente>
+        <DataEnvioLote>2018-01-28T18:54:27</DataEnvioLote>
+        <QtdNotasProcessadas>0</QtdNotasProcessadas>
+        <TempoProcessamento>0</TempoProcessamento>
+        <ValorTotalServicos>0</ValorTotalServicos>
+    </InformacoesLote>
+</Cabecalho>
+<Erro xmlns="">
+    <Codigo>1202</Codigo>
+    <Descricao>Prestador de Serviços não encontrado no Cadastro Municipal (CCM).</Descricao>
+</Erro>
+<Erro xmlns="">
+<Codigo>1203</Codigo>
+<Descricao>Total de RPS não confere com o enviado (0).</Descricao>
+</Erro><Erro xmlns="">
+<Codigo>1204</Codigo>
+<Descricao>Valor Total de Serviços não confere com o enviado (0).</Descricao>
+</Erro><Erro xmlns="">
+<Codigo>1205</Codigo>
+<Descricao>Valor Total de Dedução não confere com o enviado (0).</Descricao>
+</Erro></RetornoEnvioLoteRPS>
